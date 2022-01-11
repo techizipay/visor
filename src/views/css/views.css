@@ -1,0 +1,44 @@
+.fixed{
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.cabecera{
+    display: flex;
+    justify-content:space-between;
+    align-self: stretch;
+    flex-wrap: nowrap;
+    width: 60rem;
+}
+.derecha{
+    display: flex;
+    width: 60%;
+}
+.texto{
+    color: dimgray;
+}
+
+.acordion{
+    margin-bottom: 0.5rem;
+}
+.viewer{
+    height: 300px;
+    overflow-y: scroll;
+}
+.pre {
+    display: 'block';
+    padding: '10px 30px';
+    margin: '0'; 
+    white-space: pre-wrap;
+    word-break: keep-all;
+}
+
+.sub {
+    display: 'block';
+    padding: '10px 30px';
+    margin: '0';
+    font-size: 14px;    
+    white-space: pre-wrap;
+    word-break: keep-all;
+}
