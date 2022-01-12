@@ -2,9 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom'; 
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import Dialog from '@mui/material/Dialog';
 
 import {getTransacciones} from '../../services/Ipn';
 
