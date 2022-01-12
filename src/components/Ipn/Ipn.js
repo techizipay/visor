@@ -26,8 +26,7 @@ export const Ipn = () => {
    
  
     return ( 
-        <>
-        
+        <> 
              <Accordion defaultActiveKey={['0']} alwaysOpen>
              {
                 transaccion.map((trans,i) => (

@@ -9,7 +9,7 @@ export const IpnView = () => {
     const {form} = useContext(FormContext); 
  
     return (
-        <div style={{marginTop: '5rem', marginBottom: '1rem'}}>
+        <div className="col-12 col-sm-6 col-lg-4 p-0" >
             <h2 className='texto'>#mcwpayment.herokuapp.com/getipn</h2>
             <h5 className='texto'>https://mcwpayment.herokuapp.com/getipn</h5>
             <br/> 

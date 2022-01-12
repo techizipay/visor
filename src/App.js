@@ -9,7 +9,7 @@ export const App = () => {
       <Router>
         <FormContextProvider>
           <NavBar />
-          <div className="fixed container"> 
+          <div className="container"> 
               <Switch>
                 <Routes />
               </Switch>
