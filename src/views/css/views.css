@@ -8,8 +8,7 @@
     display: flex;
     justify-content:space-between;
     align-self: stretch;
-    flex-wrap: nowrap;
-    width: 60rem;
+    flex-wrap: wrap; 
 }
 .derecha{
     display: flex;
