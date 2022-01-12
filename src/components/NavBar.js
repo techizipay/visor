@@ -112,8 +112,9 @@ export const NavBar = () => {
         //     </Nav> 
         // </Navbar.Collapse>
         // </Navbar> 
-        <>
-        <AppBar position="static" className="contenedor" style={{ background: '#ff1e16'}} > 
+        <> 
+        {/* <AppBar position="static"  expand="lg" fixed="top" style={{ background: '#ff1e16'}} >  */}
+        <Navbar expand="lg" fixed="top" style={{ background: '#ff1e16'}}> 
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <Typography
@@ -183,7 +184,7 @@ export const NavBar = () => {
     
             </Toolbar>
           </Container>
-        </AppBar>
+        </Navbar>
 
 
     

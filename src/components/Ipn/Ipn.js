@@ -26,32 +26,23 @@ export const Ipn = () => {
    
  
     return ( 
-        <div className='col-sm-12'> 
              <Accordion defaultActiveKey={['0']} alwaysOpen>
              {
                 transaccion.map((trans,i) => (
                     <Accordion.Item eventKey={{i}} className='acordion' key={i}>
                         <Accordion.Header>
                             <div className='cabecera'>
-                                <div className='derecha'>Transacción: {trans.transaccionUUID}</div>
-                                <div>Fecha: {trans.createdAt}</div>
+                                <div className='derecha col-12 col-sm-6 col-lg-3'>Transacción: {trans.transaccionUUID}</div>
+                                <div className='col-12 col-sm-6 col-lg-3'>Fecha: {trans.createdAt}</div>
                             </div>
-                            </Accordion.Header>
-                            
+                            </Accordion.Header> 
                         <Accordion.Body>
 
                         <Card border="info" className='viewer'>
                             <Card.Body>
                                 <Card.Text className='sub'>kr-hash: {trans.transaccionHash}</Card.Text>
                                 <Card.Text>
-                                 <pre className='pre'>
-                                    
-                                    kr-answer: {trans.transaccionAnswer}
-
-                                 </pre>
-
-                                
-                                    
+                                    <pre className='pre'>kr-answer: {trans.transaccionAnswer}</pre>
                                 </Card.Text>
                             </Card.Body>
                         </Card> 
@@ -61,9 +52,6 @@ export const Ipn = () => {
                 ))
               }
                 
-            </Accordion>
- 
-        </div>
-       
+            </Accordion>       
     )
 }

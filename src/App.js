@@ -8,7 +8,7 @@ export const App = () => {
   return (  
       <Router>
         <FormContextProvider>
-          <NavBar />
+          <NavBar/>
           <div className="container"> 
               <Switch>
                 <Routes />
