@@ -14,9 +14,18 @@
     display: flex;
     width: 60%;
 }
+
 .texto{
-    color: dimgray;
+    color: dimgray;   
+    width: 50%; 
+    border-radius: 10px; 
 }
+
+@media screen and (max-width: 480px) {
+    .texto {
+      width: calc(100% - 80px);
+    }
+  }
 
 .acordion{
     margin-bottom: 0.5rem;
