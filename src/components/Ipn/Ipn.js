@@ -32,7 +32,7 @@ export const Ipn = () => {
                 transaccion.map((trans,i) => (
                     <Accordion.Item eventKey={{i}} className='acordion' key={i}>
                         <Accordion.Header>
-                            <div className='cabecera'>
+                            <div className='cabecera col-12 col-sm-6 col-lg-4 '>
                                 <div className='derecha'>Transacción: {trans.transaccionUUID}</div>
                                 <div>Fecha: {trans.createdAt}</div>
                             </div>
@@ -46,7 +46,7 @@ export const Ipn = () => {
                                 <Card.Text>
                                  <pre className='pre'>
                                     
-                                    kr-answer: { JSON.stringify(trans.transaccionAnswer, null, 4) }
+                                    kr-answer: {trans.transaccionAnswer}
 
                                  </pre>
 
