@@ -26,7 +26,7 @@
                 <div style={{width: '600px', marginTop: '5rem', marginBottom: '1rem'}}>
     
                 <div className="card mt-3">
-                    <div className="d-flex justify-content-center clogo mt-1">
+                    <div className="d-flex justify-content-center clogo mt-2">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Check_green_icon.svg" alt="..." className="confirmation"/>
                     </div>
                     <div className="card-body">
