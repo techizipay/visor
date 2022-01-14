@@ -43,6 +43,7 @@ export default function FormIncrustado() {
                   }
             }
         }     
+ 
         let result = await getFormToken(objOrder);    
         return result; 
     } 
@@ -53,8 +54,6 @@ export default function FormIncrustado() {
         const publicKey = "37286286:testpublickey_Yvs1hGXI24XA9CvjHm9tpoll6pf0Fsy13casTgquLYdmi";
  
         let { KR } =  await KRGlue.loadLibrary(endpoint, publicKey)
-
-        console.log(KR)
     
         KR.setFormConfig({formToken: formToken})  
         KR.setFormConfig({"kr-language": "es-ES"})   
@@ -70,17 +69,17 @@ export default function FormIncrustado() {
 
  
     function onFormCreated(event) {  
-        var botonpopin = document.getElementsByClassName("kr-payment-button");
-        botonpopin[0].innerHTML = botonpopin[0].innerHTML.replace(",",".");
+        // var botonpopin = document.getElementsByClassName("kr-payment-button");
+        // botonpopin[0].innerHTML = botonpopin[0].innerHTML.replace(",",".");
 
-        var botonform = document.getElementsByClassName("kr-popin-button");
-        botonform[0].innerHTML = botonform[0].innerHTML.replace(",",".");
+        // var botonform = document.getElementsByClassName("kr-popin-button");
+        // botonform[0].innerHTML = botonform[0].innerHTML.replace(",",".");
 
-        var divDiferido = document.getElementsByClassName("kr-first-installment-delay");
-        divDiferido[0].style.display = 'none';
+        // var divDiferido = document.getElementsByClassName("kr-first-installment-delay");
+        // divDiferido[0].style.display = 'none';
 
-        var divMCW = document.getElementsByClassName("kr-popin-modal-footer");
-        divMCW[0].style.display = 'none'; 
+        // var divMCW = document.getElementsByClassName("kr-popin-modal-footer");
+        // divMCW[0].style.display = 'none'; 
 
     }
 
