@@ -1,12 +1,11 @@
-.sinsombra{
-    color: inherit;
-    text-decoration: inherit;
-}
-
-.icon{
-    color: white;  
-}
 
 .listitem{
     color: red;
 }
+
+.icon{
+    display: inline-block;
+    width: 100%;
+    color: white; 
+    text-align:center;
+} 

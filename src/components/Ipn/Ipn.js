@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 
-import {getTransacciones} from '../../services/Ipn';
+import {getTransacciones} from '../../services/lyra';
 
 export const Ipn = () => {
     const history = useHistory();

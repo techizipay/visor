@@ -7,7 +7,7 @@
     "npm": "7.14.0"
   },
   "dependencies": {
-    "@lyracom/embedded-form-glue": "^0.3.3",
+    "@lyracom/embedded-form-glue": "^1.0.0",
     "@material-ui/core": "^4.12.3",
     "@mui/icons-material": "^5.2.5",
     "@testing-library/jest-dom": "^5.11.9",
@@ -25,6 +25,7 @@
     "react-moment": "^1.1.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "sweetalert2": "^11.3.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

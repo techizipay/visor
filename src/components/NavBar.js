@@ -27,6 +27,43 @@ const settings = ['Credenciales'];
 
 export const NavBar = () => {
 
+    const useStyles = makeStyles((theme) => ({
+      typography: {
+        padding: theme.spacing(2),
+      },
+    }));
+
+    const StyledMenu = withStyles({
+      paper: {
+        border: '1px solid #d3d4d5',
+      },
+    })((props) => (
+      <Menu
+        elevation={0}
+        getContentAnchorEl={null}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+        {...props}
+      />
+    ));
+    
+    const StyledMenuItem = withStyles((theme) => ({
+      root: {
+        '&:focus': {
+          backgroundColor: 'rgb(2, 117, 216)',
+          '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+            color: theme.palette.common.white,
+          },
+        },
+      },
+    }))(MenuItem);
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -58,62 +95,18 @@ export const NavBar = () => {
     setAnchorConf(null);
     };
 
-    const useStyles = makeStyles((theme) => ({
-        typography: {
-          padding: theme.spacing(2),
-        },
-      }));
-
-    const StyledMenu = withStyles({
-        paper: {
-          border: '1px solid #d3d4d5',
-        },
-      })((props) => (
-        <Menu
-          elevation={0}
-          getContentAnchorEl={null}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
-          }}
-          {...props}
-        />
-      ));
-      
-      const StyledMenuItem = withStyles((theme) => ({
-        root: {
-          '&:focus': {
-            backgroundColor: 'rgb(2, 117, 216)',
-            '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-              color: theme.palette.common.white,
-            },
-          },
-        },
-      }))(MenuItem);
+    const [anchorPay, setAnchorPay] = useState(null);
+    const handleClickPay = (event) => {
+      event.preventDefault();
+      setAnchorPay(event.currentTarget);
+    };
+    const handleClosePay = () => {
+      setAnchorPay(null);
+      };
  
 
     return ( 
-        // <Navbar bg="light" expand="lg" fixed="top" >
-        // <Navbar.Brand href="/home">IziPay</Navbar.Brand>
-        // <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        // <Navbar.Collapse id="basic-navbar-nav">
-        //     <Nav className="mr-auto">
-        //     <NavDropdown title="Mi Cuenta Web" id="basic-nav-dropdown">  
-        //         {/* <NavDropdown.Item><Link to="/formpay">Formulario de Pago</Link></NavDropdown.Item> */}
-        //         <NavDropdown.Item><Link to="/formembedded">Formulario Incrustado</Link></NavDropdown.Item>    
-        //     </NavDropdown>
-        //     {/* <NavDropdown title="Punto Web" id="basic-nav-dropdown">
-        //         <NavDropdown.Item><Link to="/formpwmarcas">Multi Marca</Link></NavDropdown.Item>   
-        //     </NavDropdown> */}
-        //     </Nav> 
-        // </Navbar.Collapse>
-        // </Navbar> 
         <> 
-        {/* <AppBar position="static"  expand="lg" fixed="top" style={{ background: '#ff1e16'}} >  */}
         <Navbar expand="lg" fixed="top" style={{ background: '#ff1e16'}}> 
           <Container maxWidth="xl">
             <Toolbar disableGutters>
@@ -171,16 +164,21 @@ export const NavBar = () => {
                 <img src='https://www.izipay.pe/_nuxt/dist/img/logo.8e6aa05.png' width='100px' height='50px' /> 
               </Typography>
 
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'flex-end' }}>
-                
-                    <Nav className="ml-auto pr-2">     
-                            <Link to="" onClick={(e) => handleClickConf(e)} className='d-flex flex-column my-auto justify-content-center sinsombra' style={{textDecoration: 'none'}}> 
-                                    <i className="fas fa-cog fa-2x icon"/>
-                                    <span className="icon">IPN</span>    
-                            </Link>   
-                    </Nav> 
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'flex-end' }}  style={{marginRight: '6rem'}}> 
+                  <Link to="/home" className='d-flex flex-column mr-4' style={{textDecoration: 'none'}}> 
+                          <i className="fas fa-cart-plus fa-2x icon"/> 
+                          <span className="icon">PRODUCTOS</span>    
+                  </Link>   
+                  <Link to="" onClick={(e) => handleClickPay(e)} className='d-flex flex-column mr-4' style={{textDecoration: 'none'}}> 
+                          <i className="far fa-credit-card fa-2x icon"/>
+                          <span className="icon">PAGO</span>    
+                  </Link>   
+       
+                  <Link to="" onClick={(e) => handleClickConf(e)} className='d-flex flex-column' style={{textDecoration: 'none'}}> 
+                          <i className="fas fa-cog fa-2x icon"/>
+                          <span className="icon">IPN</span>    
+                  </Link>    
               </Box>
-    
     
             </Toolbar>
           </Container>
@@ -188,24 +186,39 @@ export const NavBar = () => {
 
 
     
-                <StyledMenu
-                    id="customized-menu"
-                    anchorEl={anchorConf}
-                    keepMounted
-                    open={Boolean(anchorConf)}
-                    onClose={handleCloseConf}
-                >
-                    <Link to="/formipn" style={{textDecoration: 'none'}}>
-                      <StyledMenuItem onClick={handleCloseConf}>
-                          <ListItemIcon>
-                              <i className="fas fa-cog fa-2x" />
-                          </ListItemIcon>
-                          <ListItemText className="listitem" primary="IPN API" />
-                      </StyledMenuItem> 
-                    </Link> 
- 
-                    
-                </StyledMenu>
+        <StyledMenu
+            id="customized-menu"
+            anchorEl={anchorConf}
+            keepMounted
+            open={Boolean(anchorConf)}
+            onClose={handleCloseConf}
+        >
+            <Link to="/showipn" style={{textDecoration: 'none'}}>
+              <StyledMenuItem onClick={handleCloseConf}>
+                  <ListItemIcon>
+                      <i className="fas fa-cog fa-2x" />
+                  </ListItemIcon>
+                  <ListItemText className="listitem" primary="IPN API" />
+              </StyledMenuItem> 
+            </Link> 
+        </StyledMenu>
+
+        <StyledMenu
+            id="customized-menu"
+            anchorEl={anchorPay}
+            keepMounted
+            open={Boolean(anchorPay)}
+            onClose={handleClosePay}
+        >
+            <Link to="/showpay" style={{textDecoration: 'none'}}>
+              <StyledMenuItem onClick={handleClosePay}>
+                  <ListItemIcon>
+                      <i className="far fa-credit-card fa-2x" />
+                  </ListItemIcon>
+                  <ListItemText className="listitem" primary="Formulario Incrustado" />
+              </StyledMenuItem> 
+            </Link> 
+        </StyledMenu>
 
 
 </>
