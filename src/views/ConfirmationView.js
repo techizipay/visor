@@ -45,7 +45,9 @@
                             <p>Esperamos volver a verte pronto.</p>
                         </div>
 
-                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" onClick={() => setModalShow(true)} to="/">Ver Objeto de Respuesta</Link>
+                        <Button style={{ background: '#ff1e16'}} className="btn-block" variant="primary" onClick={() => setModalShow(true)}>
+                            Ver Objeto de Respuesta
+                        </Button> 
  
                         <MyVerticallyCenteredModal
                             show={modalShow}
@@ -55,15 +57,16 @@
 
                         <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" to="/showipn">Ver Registro de IPN</Link>
 
-                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" to="/home">Realizar un Nuevo Pago</Link>
+                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" to="/showpay">Realizar un Nuevo Pago</Link>
                                                 
                         
-                    </div>
-                </div> 
-                <div className="d-flex justify-content-center clogo">
-                    <img src="%PUBLIC_URL%/logoizipay.ico" alt="..."  className="logo"/> 
-                </div>
-    
+                        </div>
+                        </div> 
+                        
+                        <div className="d-flex justify-content-center clogo">
+                            <img src="%PUBLIC_URL%/logoizipay.ico" alt="..."  className="logo"/> 
+                        </div>
+ 
                 </div>
             </div>
         )
