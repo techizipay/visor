@@ -139,16 +139,23 @@ export const NavBar = () => {
                   sx={{
                     display: { xs: 'block', md: 'none' },
                   }}
-                >
-                    <Link to="/showpay">
-                      <MenuItem key={1} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">Formulario Incrustado</Typography>
+                > 
+                     
+                    <Link to="/showpay" style={{textDecoration: 'none'}}>
+                      <MenuItem key={1} onClick={handleCloseNavMenu} >
+                         <ListItemIcon>
+                              <i className="far fa-credit-card fa-2x" />
+                          </ListItemIcon>
+                          <ListItemText className="listitem pl-2" primary="Formulario Incrustado" />
                       </MenuItem> 
                     </Link>
 
-                    <Link to="/showipn">
+                    <Link to="/showipn" style={{textDecoration: 'none'}}>
                       <MenuItem key={1} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">IPN API</Typography>
+                          <ListItemIcon>
+                                    <i className="fas fa-cog fa-2x" />
+                          </ListItemIcon>
+                          <ListItemText className="listitem pl-2" primary="IPN API" /> 
                       </MenuItem> 
                     </Link>
  
@@ -194,7 +201,7 @@ export const NavBar = () => {
                   <ListItemIcon>
                       <i className="fas fa-cog fa-2x" />
                   </ListItemIcon>
-                  <ListItemText className="listitem" primary="IPN API" />
+                  <ListItemText className="listitem pl-2" primary="IPN API" />
               </StyledMenuItem> 
             </Link> 
         </StyledMenu>
@@ -211,7 +218,7 @@ export const NavBar = () => {
                   <ListItemIcon>
                       <i className="far fa-credit-card fa-2x" />
                   </ListItemIcon>
-                  <ListItemText className="listitem" primary="Formulario Incrustado" />
+                  <ListItemText className="listitem pl-2" primary="Formulario Incrustado" />
               </StyledMenuItem> 
             </Link> 
         </StyledMenu>

@@ -44,25 +44,24 @@
                         <div>
                             <p>Esperamos volver a verte pronto.</p>
                         </div>
-    
-                        <Button variant="primary" onClick={() => setModalShow(true)}>
-                            Ver Objeto de Respuesta
-                        </Button>
+
+                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" onClick={() => setModalShow(true)} to="/">Ver Objeto de Respuesta</Link>
+ 
                         <MyVerticallyCenteredModal
                             show={modalShow}
                             onHide={() => setModalShow(false)}
                         />
-    
-                        <Link className="btn btn-primary btn-block" to="/home">Seguir Comprando</Link>
                         <br></br>
-    
-                        
+
+                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" to="/showipn">Ver Registro de IPN</Link>
+
+                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" to="/home">Realizar un Nuevo Pago</Link>
+                                                
                         
                     </div>
-                </div>
-    
+                </div> 
                 <div className="d-flex justify-content-center clogo">
-                    <img src="https://www.izipay.pe/_nuxt/dist/img/logo.8e6aa05.png" alt="..."  className="logo"/> 
+                    <img src="%PUBLIC_URL%/logoizipay.ico" alt="..."  className="logo"/> 
                 </div>
     
                 </div>
