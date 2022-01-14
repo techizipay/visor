@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'; 
-import { PayContext } from '../../context/payContext';
-import Card from 'react-bootstrap/Card';
-import '../css/Confirmation.css';
-import  { Redirect } from 'react-router-dom'  
-import {Link} from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { PayContext } from '../../context/payContext'; 
+import '../css/Confirmation.css'; 
 import KRGlue from "@lyracom/embedded-form-glue"; 
 import {useHistory} from 'react-router-dom';
+import {FormContext} from '../../context/formContext';
 
 
 import {getFormToken} from '../../services/lyra';
@@ -14,7 +11,8 @@ import {getFormToken} from '../../services/lyra';
 
 export default function FormIncrustado() { 
     const history = useHistory();
-    const { order, carrito, setOrderGen } = useContext(PayContext); 
+    const { order } = useContext(PayContext); 
+    const {setresultFI} = useContext(FormContext);
     const [error, setError] = useState(''); 
  
     useEffect(() => {
@@ -30,16 +28,14 @@ export default function FormIncrustado() {
     const obtenerFormToken = async () => {   
         let objOrder = {
             "formAction": "PAYMENT",
-            "amount":   order.order_total.replace('.',''),
+            "amount":   order.order_total,
             "currency": "PEN",
             "orderId":  "1",
             "customer": {
-                "email": order.user_email,
-                "reference": order.user_email,
+                "email": order.user_email, 
                 "billingDetails": {
                     "firstName": order.user_name,
-                    "lastName": order.user_ape,
-                    "phoneNumber": order.user_phone
+                    "lastName": order.user_ape
                   }
             }
         }     
@@ -69,23 +65,17 @@ export default function FormIncrustado() {
 
  
     function onFormCreated(event) {  
-        // var botonpopin = document.getElementsByClassName("kr-payment-button");
-        // botonpopin[0].innerHTML = botonpopin[0].innerHTML.replace(",",".");
+        var botonpopin = document.getElementsByClassName("kr-payment-button");
+        botonpopin[0].innerHTML = botonpopin[0].innerHTML.replace(",",".");  
+         botonpopin[0].style.backgroundColor = "#ff1e16";
 
-        // var botonform = document.getElementsByClassName("kr-popin-button");
-        // botonform[0].innerHTML = botonform[0].innerHTML.replace(",",".");
-
-        // var divDiferido = document.getElementsByClassName("kr-first-installment-delay");
-        // divDiferido[0].style.display = 'none';
-
-        // var divMCW = document.getElementsByClassName("kr-popin-modal-footer");
-        // divMCW[0].style.display = 'none'; 
+        var divMCW = document.getElementsByClassName("kr-installment-number");
+        divMCW[0].style.display = 'none'; 
 
     }
 
     function onPaid(event) { 
-        if (event.clientAnswer.orderStatus === "PAID") {
-            console.log(JSON.stringify(event.clientAnswer));
+        if (event.clientAnswer.orderStatus === "PAID") { 
             setresultFI(event.clientAnswer); 
             return history.push(`/formembeddedconfirm`)
              
@@ -100,15 +90,23 @@ export default function FormIncrustado() {
     }
 
 
-    return (
+    return ( 
+
         <div className="d-flex justify-content-center">
-            <div>  
-                <h5>Pago con tarjeta de débito y/o crédito</h5>
-                <div className="container"> 
-                    <div id="myPaymentForm"></div> 
-                    <div>{error}</div>
-                </div> 
+            <div style={{width: '360px', marginBottom: '1rem'}}>
+            <div className="card mt-3">
+                <div className="card-body">
+
+                    <div className="container"> 
+                        <div id="myPaymentForm"></div> 
+                        <div>{error}</div>
+                    </div>  
+                   
+                </div>
             </div>
-        </div> 
+            </div>
+        </div>
+  
+
     )
 }

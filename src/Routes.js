@@ -5,7 +5,7 @@ import {FPFormView} from './views/FPFormView';
 import {FIFormView} from './views/FIFormView'; 
 import {FIFormPay} from './views/FIFormPay'; 
 import {PWFormPay} from './views/PWFormPay'; 
-import {FIConfirmation} from './views/FIConfirmation'; 
+import {ConfirmationView} from './views/ConfirmationView'; 
 
 import {HomeView} from './views/HomeView';
 import {IpnView} from './views/IpnView'; 
@@ -18,7 +18,7 @@ export const Routes = () => {
             <Route exac path="/formpay" component={FPFormView}/> 
             <Route exac path="/formembedded" component={FIFormView}/>  
             <Route exac path="/formembeddedpay" component={FIFormPay}/>  
-            <Route exac path="/formembeddedconfirm" component={FIConfirmation}/>  
+            <Route exac path="/formembeddedconfirm" component={ConfirmationView}/>  
             <Route exac path="/formpwmarcas" component={PWFormPay}/> 
             <Route exac path="/showipn" component={IpnView}/> 
             <Route exac path="/showpay" component={PayView}/> 

@@ -165,10 +165,6 @@ export const NavBar = () => {
               </Typography>
 
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'flex-end' }}  style={{marginRight: '6rem'}}> 
-                  <Link to="/home" className='d-flex flex-column mr-4' style={{textDecoration: 'none'}}> 
-                          <i className="fas fa-cart-plus fa-2x icon"/> 
-                          <span className="icon">PRODUCTOS</span>    
-                  </Link>   
                   <Link to="" onClick={(e) => handleClickPay(e)} className='d-flex flex-column mr-4' style={{textDecoration: 'none'}}> 
                           <i className="far fa-credit-card fa-2x icon"/>
                           <span className="icon">PAGO</span>    
