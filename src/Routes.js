@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 
 import {FPFormView} from './views/FPFormView'; 
 import {FIFormView} from './views/FIFormView'; 
@@ -14,6 +14,7 @@ import {PayView} from './views/PayView';
 export const Routes = () => {
     return (
         <Fragment>
+            <Redirect from='/' to='/home' /> 
             <Route exac path="/home" component={HomeView} />
             <Route exac path="/formpay" component={FPFormView}/> 
             <Route exac path="/formembedded" component={FIFormView}/>  
