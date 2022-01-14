@@ -62,7 +62,7 @@ export const PayView = () => {
               <div className='col-12 col-sm-6 p-0'>
                 <FormData/> 
                 <div className="d-flex justify-content-center">  
-                  <button style={{ background: '#ff1e16', color:'white',width: '390px'}} className="btn btn-primary btn-block" onClick={(ev) => {showFormPay()}}>Ir a Pagar</button>
+                  <button style={{ background: '#ff1e16', color:'white',width: '390px'}} className="btn btn-danger btn-block" onClick={(ev) => {showFormPay()}}>Ir a Pagar</button>
                 </div>
               </div>
               <div className='col-12 col-sm-6 p-0'>
