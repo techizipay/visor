@@ -70,20 +70,12 @@ export const NavBar = () => {
     const handleOpenNavMenu = (event) => { 
         
         setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => { 
-        setAnchorElUser(event.currentTarget);
-    };
+    }; 
 
     const handleCloseNavMenu = (event) => {
         console.log(event);
         setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = (event) => {
-        console.log(event);
-        setAnchorElUser(null);
-    };
+    }; 
 
     const [anchorConf, setAnchorConf] = useState(null);
     const handleClickConf = (event) => {
@@ -148,13 +140,21 @@ export const NavBar = () => {
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
-                  ))}
+                    <Link to="/showpay">
+                      <MenuItem key={1} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">Formulario Incrustado</Typography>
+                      </MenuItem> 
+                    </Link>
+
+                    <Link to="/showipn">
+                      <MenuItem key={1} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">IPN API</Typography>
+                      </MenuItem> 
+                    </Link>
+ 
                 </Menu>
               </Box>
+
               <Typography
                 variant="h6"
                 noWrap
