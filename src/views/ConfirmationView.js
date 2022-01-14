@@ -26,7 +26,7 @@
                 <div style={{width: '600px', marginTop: '5rem', marginBottom: '1rem'}}>
     
                 <div className="card mt-3">
-                    <div className="d-flex justify-content-center clogo">
+                    <div className="d-flex justify-content-center clogo mt-1">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Check_green_icon.svg" alt="..." className="confirmation"/>
                     </div>
                     <div className="card-body">
@@ -63,7 +63,7 @@
                         </div> 
                         
                         <div className="d-flex justify-content-center clogo">
-                            <img src="https://github.com/techizipay/visor/blob/336750a64b528ddd4b66244415ae51eb9f35d11c/public/logoizipay.png" alt="..."  className="logo"/>  
+                            <img src="https://raw.githubusercontent.com/techizipay/visor/336750a64b528ddd4b66244415ae51eb9f35d11c/public/logoizipay.png" alt="..."  className="logo"/>  
                         </div>
  
                 </div>
