@@ -6,14 +6,14 @@ import  { Redirect } from 'react-router-dom'
 import {Link} from "react-router-dom";
 import { useForm } from "react-hook-form";
 import KRGlue from "@lyracom/embedded-form-glue"; 
-
+import {useHistory} from 'react-router-dom';
 
 
 import {getFormToken} from '../../services/lyra';
 
 
 export default function FormIncrustado() { 
-
+    const history = useHistory();
     const { order, carrito, setOrderGen } = useContext(PayContext); 
     const [error, setError] = useState(''); 
  
@@ -86,6 +86,8 @@ export default function FormIncrustado() {
     function onPaid(event) { 
         if (event.clientAnswer.orderStatus === "PAID") {
             console.log(JSON.stringify(event.clientAnswer));
+            setresultFI(event.clientAnswer); 
+            return history.push(`/formembeddedconfirm`)
              
           } else {
             // Show error message to the user
