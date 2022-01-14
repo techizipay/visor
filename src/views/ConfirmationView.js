@@ -45,26 +45,25 @@
                             <p>Esperamos volver a verte pronto.</p>
                         </div>
 
-                        <Button style={{ background: '#ff1e16'}} className="btn-block" variant="primary" onClick={() => setModalShow(true)}>
+                        <Button style={{ background: '#ff1e16'}} className="btn-block mb-1" variant="danger" onClick={() => setModalShow(true)}>
                             Ver Objeto de Respuesta
                         </Button> 
  
                         <MyVerticallyCenteredModal
                             show={modalShow}
                             onHide={() => setModalShow(false)}
-                        />
-                        <br></br>
+                        /> 
 
-                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" to="/showipn">Ver Registro de IPN</Link>
+                        <Link style={{ background: '#ff1e16'}} className="btn btn-danger btn-block" to="/showipn">Ver Registro de IPN</Link>
 
-                        <Link style={{ background: '#ff1e16'}} className="btn btn-primary btn-block" to="/showpay">Realizar un Nuevo Pago</Link>
+                        <Link style={{ background: '#ff1e16'}} className="btn btn-danger btn-block" to="/showpay">Realizar un Nuevo Pago</Link>
                                                 
                         
                         </div>
                         </div> 
                         
                         <div className="d-flex justify-content-center clogo">
-                            <img src="%PUBLIC_URL%/logoizipay.ico" alt="..."  className="logo"/> 
+                            <img src="https://github.com/techizipay/visor/blob/master/public/logoizipay.png" alt="..."  className="logo"/> 
                         </div>
  
                 </div>
