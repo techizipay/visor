@@ -63,7 +63,7 @@
                         </div> 
                         
                         <div className="d-flex justify-content-center clogo">
-                            <img src="https://github.com/techizipay/visor/blob/master/public/logoizipay.png" alt="..."  className="logo"/> 
+                            <img src="https://github.com/techizipay/visor/blob/336750a64b528ddd4b66244415ae51eb9f35d11c/public/logoizipay.png" alt="..."  className="logo"/>  
                         </div>
  
                 </div>
