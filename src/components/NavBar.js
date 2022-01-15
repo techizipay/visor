@@ -150,6 +150,15 @@ export const NavBar = () => {
                       </MenuItem> 
                     </Link>
 
+                    <Link to="/showpopin" style={{textDecoration: 'none'}}>
+                      <MenuItem key={1} onClick={handleCloseNavMenu} >
+                         <ListItemIcon>
+                              <i className="far fa-credit-card fa-2x" />
+                          </ListItemIcon>
+                          <ListItemText className="listitem pl-2" primary="Formulario Popin" />
+                      </MenuItem> 
+                    </Link>
+
                     <Link to="/showipn" style={{textDecoration: 'none'}}>
                       <MenuItem key={1} onClick={handleCloseNavMenu}>
                           <ListItemIcon>
@@ -219,6 +228,14 @@ export const NavBar = () => {
                       <i className="far fa-credit-card fa-2x" />
                   </ListItemIcon>
                   <ListItemText className="listitem pl-2" primary="Formulario Incrustado" />
+              </StyledMenuItem> 
+            </Link> 
+            <Link to="/showpopin" style={{textDecoration: 'none'}}>
+              <StyledMenuItem onClick={handleClosePay}>
+                  <ListItemIcon>
+                      <i className="far fa-credit-card fa-2x" />
+                  </ListItemIcon>
+                  <ListItemText className="listitem pl-2" primary="Formulario Popin" />
               </StyledMenuItem> 
             </Link> 
         </StyledMenu>

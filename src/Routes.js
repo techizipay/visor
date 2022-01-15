@@ -10,6 +10,7 @@ import {ConfirmationView} from './views/ConfirmationView';
 import {HomeView} from './views/HomeView';
 import {IpnView} from './views/IpnView'; 
 import {PayView} from './views/PayView'; 
+import {PopInView} from './views/PopInView'; 
 
 export const Routes = () => {
     return (
@@ -23,6 +24,7 @@ export const Routes = () => {
             <Route exac path="/formpwmarcas" component={PWFormPay}/> 
             <Route exac path="/showipn" component={IpnView}/> 
             <Route exac path="/showpay" component={PayView}/> 
+            <Route exac path="/showpopin" component={PopInView}/> 
         </Fragment>
     )
 }

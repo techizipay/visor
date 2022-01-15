@@ -9,7 +9,7 @@ import {FormContext} from '../../context/formContext';
 import {getFormToken} from '../../services/lyra';
 
 
-export default function FormIncrustado() { 
+export default function FormPopIn() { 
     const history = useHistory();
     const { order } = useContext(PayContext); 
     const {setresultFI} = useContext(FormContext);
@@ -53,6 +53,7 @@ export default function FormIncrustado() {
     
         KR.setFormConfig({formToken: formToken})  
         KR.setFormConfig({"kr-language": "es-ES"})   
+        KR.setFormConfig({"kr-popin": ""})   
 
         let { KR: KR1, result} = await KR.addForm("#myPaymentForm") 
        
@@ -67,14 +68,23 @@ export default function FormIncrustado() {
     function onFormCreated(event) {  
         var botonpopin = document.getElementsByClassName("kr-payment-button");
         botonpopin[0].innerHTML = botonpopin[0].innerHTML.replace(",",".");  
-         botonpopin[0].style.backgroundColor = "#ff1e16";
+        botonpopin[0].style.backgroundColor = "#ff1e16";
+        botonpopin[0].style.color = "white";
 
-        var divMCW = document.getElementsByClassName("kr-installment-number");
-        divMCW[0].style.display = 'none'; 
+        var botonpop = document.getElementsByClassName("kr-popin-button");
+        botonpop[0].innerHTML = botonpopin[0].innerHTML.replace(",",".");  
+        botonpop[0].style.backgroundColor = "#ff1e16";
+        botonpop[0].style.color = "white";
 
         var divDiferido = document.getElementsByClassName("kr-first-installment-delay");
         divDiferido[0].style.display = 'none';
-  
+
+        var divCuotas = document.getElementsByClassName("kr-installment-number");
+        divCuotas[0].style.display = 'none'; 
+
+        var divMCW = document.getElementsByClassName("kr-popin-modal-footer");
+        divMCW[0].style.display = 'none'; 
+
     }
 
     function onPaid(event) { 
