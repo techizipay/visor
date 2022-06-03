@@ -46,7 +46,7 @@ export default function FormIncrustado() {
 
     async function displayPaymentForm(formToken)
     {
-        const endpoint = "https://static.micuentaweb.pe";
+        const endpoint = "https://api.micuentaweb.pe";
         const publicKey = "37286286:testpublickey_Yvs1hGXI24XA9CvjHm9tpoll6pf0Fsy13casTgquLYdmi";
  
         let { KR } =  await KRGlue.loadLibrary(endpoint, publicKey)
@@ -60,7 +60,11 @@ export default function FormIncrustado() {
 
         KR1.onSubmit(onPaid);
         KR1.onError(onError); 
+
+
         KR1.onFormCreated(onFormCreated);
+
+        
     }
 
  
@@ -89,7 +93,8 @@ export default function FormIncrustado() {
       }
  
     function onError(event) {  
-           console.log(event) 
+           var rpta = JSON.stringify(event)
+           console.log(rpta.detailedErrorCode);
     }
 
 

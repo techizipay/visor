@@ -99,7 +99,9 @@ export default function FormPopIn() {
       }
  
     function onError(event) {  
-           console.log(event) 
+           console.log(event); 
+
+           alert(event.detailedErrorCode + ' - ' + event.detailedErrorMessage);
     }
 
 

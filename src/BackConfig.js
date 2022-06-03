@@ -1,4 +1,5 @@
-export const URL_BACK = 'https://mcwpayment.herokuapp.com/';
+// export const URL_BACK = 'https://mcwpayment.herokuapp.com/';
+export const URL_BACK = 'http://127.0.0.1:5000/';
 
 export const FetchGet = async (url, endpoint) => {
     const response = await fetch(url + endpoint);
